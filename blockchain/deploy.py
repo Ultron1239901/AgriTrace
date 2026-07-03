@@ -49,7 +49,7 @@ def compile_contract():
 
 def deploy():
     provider_url = os.getenv("WEB3_PROVIDER")
-    private_key = os.getenv("DEPLOYER_PRIVATE_KEY")
+    private_key = os.getenv("PRIVATE_KEY") or os.getenv("DEPLOYER_PRIVATE_KEY")
 
     if not provider_url or not private_key:
         print("Error: Set WEB3_PROVIDER and DEPLOYER_PRIVATE_KEY in environment.")

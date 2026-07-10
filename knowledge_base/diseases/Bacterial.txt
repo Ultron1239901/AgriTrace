@@ -1,0 +1,7 @@
+AgriTrace Bacterial Disease Manual
+==================================
+Bacterial diseases enter plants through wounds or natural openings (stomata/hydathodes).
+Key Diseases:
+1. Bacterial Leaf Blight of Rice (Xanthomonas oryzae): Transmitted via splash water. Causes straw-colored leaf wilting.
+   - Treatment: Suspend nitrogen applications, drain water, and spray Streptocycline antibiotic (0.1 g/L).
+2. Bacterial Canker (Clavibacter): Yellow halos on tomato leaves. Sanitize pruning tools.

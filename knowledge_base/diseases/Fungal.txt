@@ -1,0 +1,7 @@
+AgriTrace Fungal Disease Manual
+===============================
+Fungal pathogens thrive under high humidity, wet foliage, and poor ventilation.
+Key Diseases:
+1. Rice Blast (Magnaporthe oryzae): Diamond-shaped lesions on leaves. Treat with Tricyclazole or spray Pseudomonas fluorescens.
+2. Potato Late Blight (Phytophthora infestans): Decaying dark patches on leaves. Apply Metalaxyl or copper fungicides.
+3. Anthracnose: Sunken black spots on fruits. Practice clean crop rotations and apply Carbendazim.

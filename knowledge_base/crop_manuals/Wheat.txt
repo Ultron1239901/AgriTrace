@@ -1,0 +1,6 @@
+AgriTrace Crop Manual: Wheat (Triticum aestivum)
+================================================
+Wheat is a Rabi crop requiring cool growing weather (10-15°C) and warm, sunny conditions at ripening (20-25°C).
+Soil: Well-drained loamy to clayey loamy soils.
+Irrigation: Critical stages include Crown Root Initiation (CRI) at 21 days, tillering, jointing, and milking.
+Fertilizers: Apply NPK in a 4:2:1 ratio (120kg N, 60kg P, 40kg K per hectare) for maximum yield.

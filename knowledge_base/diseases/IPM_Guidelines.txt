@@ -1,0 +1,7 @@
+AgriTrace Integrated Pest Management (IPM) Guidelines
+=====================================================
+IPM combines cultural, physical, biological, and chemical tools to manage pests sustainably.
+1. Cultural: Crop rotation, intercropping, trap cropping (e.g. planting marigold near tomato to divert nematodes).
+2. Physical: Handpicking caterpillars, field sanitation, weed clearance.
+3. Biological: Releasing Trichogramma egg parasitoids or applying Bacillus thuringiensis (Bt).
+4. Chemical: Use only as a last resort under strict thresholds.

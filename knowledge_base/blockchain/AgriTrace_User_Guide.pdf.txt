@@ -1,0 +1,7 @@
+AgriTrace User Guide: Blockchain & Ledger System
+================================================
+AgriTrace utilizes Polygon Blockchain (Layer 2) to store cryptographic tamper-proof records of crop batch histories.
+1. Batch Creation: The farmer logs harvest date, farming method, quantity, and coordinates. This data is hashed.
+2. Data Hash on Ledger: The data hash is uploaded to the blockchain. A transaction hash (TxHash) is generated.
+3. Verification: Buyers scan the QR code. The app queries the blockchain, retrieves the verified transaction hash, and compares local metadata to guarantee crop authenticity.
+4. Scan Alerts: Multiple scans on the same QR from different geographic IPs trigger automatic counterfeit alerts to prevent retail fraud.

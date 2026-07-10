@@ -1,0 +1,6 @@
+AgriTrace Crop Manual: Rice / Paddy (Oryza sativa)
+==================================================
+Rice is a primary staple crop thriving in hot, humid climates with average temperatures between 20-37°C.
+Soil: Clayey or silty soils that can retain water are ideal. Submergence under 5-10cm of standing water is standard.
+Farming Methods: Transplanting, Direct Seeded Rice (DSR), and System of Rice Intensification (SRI).
+Harvesting: Harvest when panicles turn golden yellow and moisture content drops below 20%. Dry to 14% for storage.

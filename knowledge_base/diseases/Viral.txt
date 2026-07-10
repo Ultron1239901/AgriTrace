@@ -1,0 +1,6 @@
+AgriTrace Viral Disease Manual
+==============================
+Viral plant pathogens are not directly treatable. Control focuses on removing infected plants and managing insect vectors.
+Key Diseases:
+1. Tomato Yellow Leaf Curl Virus (TYLCV): Stunted growth, curly yellow leaves. Transmitted by Whiteflies. Control vectors using sticky traps, neem oil, or Imidacloprid.
+2. Chilli Leaf Curl: Leaves curl upwards. Transmitted by thrips and whiteflies. Spray systemic insecticides.

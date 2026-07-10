@@ -1,0 +1,7 @@
+AgriTrace Weather Advisory: Drought Mitigation
+==============================================
+Drought stress reduces crop yields and dehydrates root systems.
+Mitigation Strategies:
+- Drip Irrigation: Delivers water directly to root zones, reducing evaporative loss by up to 60%.
+- Mulching: Spread organic straw mulches to insulate soil and reduce evaporation.
+- Alternate Wetting and Drying (AWD): A water-saving technology in rice fields to reduce water consumption.

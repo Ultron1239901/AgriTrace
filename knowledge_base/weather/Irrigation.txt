@@ -1,0 +1,6 @@
+AgriTrace Irrigation Standards
+==============================
+Efficient watering protects crops and saves resources.
+1. Sprinkler Irrigation: Best for sandy loams and close-growing crops like wheat or leafy vegetables.
+2. Drip/Trickle: Ideal for orchard crops, banana, and wide-spaced rows.
+3. Furrow Irrigation: Traditional watering for ridge crops like potato. Ensure furrows are graded properly.

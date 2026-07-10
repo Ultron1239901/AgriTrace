@@ -1,0 +1,6 @@
+AgriTrace Crop Storage Guidelines
+=================================
+Proper storage prevents post-harvest weight loss and quality deterioration.
+- Grains (Rice/Wheat): Dry to <14% moisture. Store in clean, airtight silos or pesticide-treated jute bags. Keep temperature at 20-25°C and relative humidity at 60-65%.
+- Potatoes: Store in cold storage units at 4-7°C with 90% relative humidity to prevent sprouting and rotting.
+- Fruits/Vegetables: Store in cool, ventilated crates to reduce respiration rate.

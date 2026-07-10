@@ -1,0 +1,5 @@
+AgriTrace Market Price Analysis
+===============================
+Understanding price fluctuations helps farmers optimize sell schedules.
+- Seasonal Trends: Crop prices are usually lowest during peak harvest arrivals due to supply surge. Prices peak during lean off-season periods.
+- Market Arbitrage: Use eNAM to compare prices across different regional mandis and sell where demand is highest.

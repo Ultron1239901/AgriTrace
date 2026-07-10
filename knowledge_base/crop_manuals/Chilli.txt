@@ -1,0 +1,6 @@
+AgriTrace Crop Manual: Chilli (Capsicum annuum)
+==============================================
+Chilli requires warm, humid weather during growth and dry weather during fruit ripening (20-30°C).
+Soil: Well-drained sandy loam or clay loam soils.
+Diseases: Anthracnose (fruit rot) and leaf curl virus (thrips/mites vector).
+Management: Spray neem seed kernel extract (NSKE 5%) or apply systemic insecticides for sucking vector control.

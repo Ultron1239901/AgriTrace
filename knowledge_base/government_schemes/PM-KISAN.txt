@@ -1,0 +1,5 @@
+Government Scheme: PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)
+=============================================================
+An initiative by the Government of India providing financial support to small and marginal landholding farmers.
+- Benefit: Direct income transfer of INR 6,000 per year in three equal installments of INR 2,000 directly into the bank accounts of landholder farmer families.
+- Eligibility: Landowner farmer families with cultivable land holdings registered in land records.

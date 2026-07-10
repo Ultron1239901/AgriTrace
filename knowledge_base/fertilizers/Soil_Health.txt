@@ -1,0 +1,6 @@
+AgriTrace Soil Health & Maintenance
+===================================
+Healthy soil holds moisture, supports crop roots, and contains balanced nutrients.
+- pH Regulation: Add lime (calcium carbonate) to raise pH in acidic soils. Add gypsum (calcium sulfate) or sulfur to lower pH in alkaline soils.
+- Cover Cropping: Plant legumes (beans/peas) to fix atmospheric nitrogen naturally.
+- Mulching: Prevents soil erosion, retains soil moisture, and controls weeds.

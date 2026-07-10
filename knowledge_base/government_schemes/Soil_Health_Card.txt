@@ -1,0 +1,5 @@
+Government Scheme: Soil Health Card Scheme
+==========================================
+Assists state governments to issue soil health cards to all farmers in the country.
+- Details: The card contains soil nutrient status (N, P, K, secondary nutrients, micronutrients, pH, EC, organic carbon) and fertilizer recommendations customized for crops.
+- Cycle: Soil samples are tested every 2 years to track nutrient depletion trends.

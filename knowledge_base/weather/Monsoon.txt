@@ -1,0 +1,7 @@
+AgriTrace Weather Advisory: Monsoon Management
+==============================================
+Monsoon rain is critical for Kharif crops like rice, maize, and cotton.
+Advisories:
+- Drainage: Build proper field channels to drain excess rainwater and prevent crop inundation/root rot.
+- Pest Monitoring: High moisture increases sucking pest activity. Monitor cotton and chilli fields daily.
+- Delay Spraying: Avoid foliar chemical sprays immediately before heavy rainfall events.

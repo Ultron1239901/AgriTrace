@@ -1,0 +1,6 @@
+AgriTrace Supply Chain & Logistics
+==================================
+Cold chain transport and trace logs preserve crop value.
+- Cold Chain: Refrigated vehicles (reefers) are required for perishables (banana, tomato, leafy vegetables).
+- First-In, First-Out (FIFO): Ensure older harvest batches are moved first to avoid spoilage.
+- Trace Logs: Every logistics hand-off is logged using batch QR codes to ensure transparency.

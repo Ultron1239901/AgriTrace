@@ -1,0 +1,4 @@
+Government Scheme: eNAM (electronic National Agriculture Market)
+===============================================================
+A pan-India electronic trading portal networking the existing APMC mandis to create a unified national market for agricultural commodities.
+- Benefit: Single-window services for mandi listings, trading prices, online payments, and quality testing. Farmers can sell directly to buyers nationwide.

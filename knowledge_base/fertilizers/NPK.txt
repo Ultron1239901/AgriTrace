@@ -1,0 +1,7 @@
+AgriTrace Fertilizer Guide: NPK Balance
+=======================================
+Nitrogen (N), Phosphorus (P), and Potassium (K) are the primary crop nutrients.
+- Nitrogen: Promotes vegetative leaf growth. Excess causes soft foliage, making crops susceptible to fungal diseases like rust/blast.
+- Phosphorus: Builds strong roots and enhances early plant development.
+- Potassium: Improves disease resistance, water regulation, and fruit quality.
+Apply based on soil testing reports to avoid groundwater pollution.

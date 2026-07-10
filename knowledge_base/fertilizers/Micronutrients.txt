@@ -1,0 +1,6 @@
+AgriTrace Micronutrient Guide
+=============================
+Crops require trace minerals in minor quantities for metabolic functions.
+- Zinc (Zn): Critical for hormone production. Deficiency causes little-leaf disease in cotton/citrus.
+- Iron (Fe): Vital for chlorophyll synthesis. Deficiency causes yellowing of young leaves (chlorosis).
+- Boron (B): Required for flower pollination and seed setting. Deficiency causes fruit cracking.

@@ -1,0 +1,5 @@
+Government Scheme: PMFBY (Pradhan Mantri Fasal Bima Yojana)
+===========================================================
+A crop insurance scheme designed to support sustainable agriculture production by mitigating natural risk.
+- Coverage: Financial support to farmers suffering crop loss/damage due to natural calamities, pests, and diseases.
+- Premiums: Uniform low premium of 2.0% for Kharif crops, 1.5% for Rabi crops, and 5.0% for commercial/horticultural crops.

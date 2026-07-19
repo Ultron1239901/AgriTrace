@@ -1,235 +1,185 @@
-# AGRITRACE
+# 🛡️ AgriTrace Supply Chain Ledger
 
-**Blockchain-Based QR Verification System for Agricultural Supply Chains**
+**Decentralized Blockchain Verification, Computer Vision Diagnostics, & RAG AI Assistant for Agricultural Logistics**
 
-AGRITRACE enables farmers to register crop batches, generate cryptographic hashes stored on the Polygon blockchain, and issue QR codes that consumers can scan to verify produce authenticity.
-
----
-
-## Features
-
-- **Farmer Portal** — Register, upload crop batches with images, generate QR codes
-- **Admin Panel** — Verify farmers, monitor batches, view verification logs
-- **Consumer Verification** — Scan QR or enter batch ID to verify AUTHENTIC / TAMPERED status
-- **Blockchain Integration** — SHA-256 hashes stored on Polygon Amoy via Solidity smart contract
-- **Multilingual UI** — English, Hindi (हिंदी), and Kannada (ಕನ್ನಡ)
+AgriTrace is a modern, enterprise-grade supply chain tracking system designed to verify the authenticity of farm produce. It combines **Polygon Blockchain Ledger smart contracts**, **Computer Vision (YOLOv8 & ViT)** crop diagnostics, **LangGraph RAG AI Assistants**, and **Leaflet Geospatial boundaries mapping** to prevent supply chain fraud and support farmers.
 
 ---
 
-## Tech Stack
+## 🗺️ System Architecture
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | React, Vite, Tailwind CSS, React Router, Axios, i18next |
-| Backend | FastAPI, Pydantic, Uvicorn, Motor (async MongoDB) |
-| Database | MongoDB Atlas |
-| Blockchain | Solidity, Polygon Amoy, Web3.py |
-| Security | SHA-256 hashing, JWT authentication |
-| QR | qrcode library, html5-qrcode scanner |
-
----
-
-## Project Structure
-
+```mermaid
+graph TD
+    A[Farmer] -->|Register Crop Batch| B(FastAPI Backend)
+    B -->|Compute SHA-256 Hash| C[(PostgreSQL Database)]
+    B -->|Log Transaction Record| D[Polygon Blockchain Smart Contract]
+    B -->|Generate QR Code Card| E[QR Code PNG Asset]
+    F[Consumer/Buyer] -->|Scan QR Code| B
+    B -->|Verify Blockchain Integrity Check| D
+    B -->|Fuzzed Geospatial Boundary Overlay| F
+    G[Telegram Bot UI] -->|Scan QR / Send Batch ID / Query AI| B
 ```
+
+---
+
+## 🛠️ Tech Stack & Key Modules
+
+| Layer | Technologies & Frameworks |
+| :--- | :--- |
+| **Frontend** | React, Vite, Vanilla CSS, React Router, Axios, i18next (Multilingual), Leaflet.js |
+| **Backend** | Python 3.10+, FastAPI, SQLAlchemy (Async pg), Uvicorn |
+| **Database** | PostgreSQL |
+| **Blockchain** | Solidity, Web3.py, Polygon network |
+| **AI Vision** | YOLOv8 (Crop detection), ViT / OpenCV (Disease & Quality Diagnostics) |
+| **AI Chatbot** | LangGraph, LangChain, OpenRouter Gemini 2.5, Vector DB Document RAG |
+| **Helpline Integrations** | Telegram Bot API Webhook |
+
+---
+
+## 📦 Project Structure
+
+```text
 Agriculture project/
-├── frontend/          # React + Vite application
-├── backend/           # FastAPI REST API
-├── blockchain/        # Solidity contract, ABI, deploy script
-├── uploads/
-│   ├── images/        # Crop image uploads
-│   └── qr/            # Generated QR code PNGs
-├── docs/              # API documentation
-├── .env.example       # Environment variable template
-└── README.md
+├── backend/                  # FastAPI REST API + Async PostgreSQL
+│   ├── app/                  # Main FastAPI Application
+│   │   ├── models/           # SQLAlchemy DB Models
+│   │   ├── routers/          # API Route Controllers (Auth, Crops, Telegram, etc.)
+│   │   ├── services/         # Business Logic Layers (Email, Verification, RAG)
+│   │   └── database.py       # Async SQLAlchemy Session Engine
+│   ├── computer_vision/      # YOLOv8 & ViT Image Diagnostics Pipelines
+│   ├── telegram/             # Telegram Bot Event Handler & Webhook router
+│   └── requirements.txt      # Python Dependencies
+├── frontend/                 # React + Vite Client Application
+│   ├── src/
+│   │   ├── components/       # Shared UI Widgets (LeafletMap, Tour, Onboarding)
+│   │   ├── pages/            # View Pages (Forgot Password, Dashboards, About)
+│   │   └── services/         # Axios API layer
+│   └── package.json          # Node.js dependencies & scripts
+├── agritrace_database_schema.sql  # Database Schema Import Queries (PostgreSQL)
+└── README.md                 # Setup & Operating Manual
 ```
 
 ---
 
-## Prerequisites
+## 🚀 Setup & Installation Guide
 
-- **Node.js** 18+ and npm
-- **Python** 3.10+
-- **MongoDB Atlas** account (connection string provided)
-- **Polygon Amoy** testnet wallet (optional, for blockchain storage)
+Follow these sequential steps to clone, configure, and boot the AgriTrace application on a new system:
 
----
-
-## Installation
-
-### 1. Clone and enter project
-
+### 1. Clone & Prepare Directory
+Extract the zip folder or clone the repository from GitHub:
 ```bash
+git clone <repository-url>
 cd "Agriculture project"
 ```
 
-### 2. Backend setup
+---
 
-```bash
-cd backend
-python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
-# macOS/Linux
-source venv/bin/activate
-
-pip install -r requirements.txt
-```
-
-Copy environment file (already configured with MongoDB Atlas):
-
-```bash
-# backend/.env is pre-configured — edit if needed
-```
-
-### 3. Frontend setup
-
-```bash
-cd ../frontend
-npm install
-```
-
-### 4. Blockchain setup (optional)
-
-Deploy the CropTrace smart contract to Polygon Amoy:
-
-```bash
-cd ../blockchain
-pip install -r requirements.txt
-
-# Set in backend/.env:
-# WEB3_PROVIDER=https://rpc-amoy.polygon.technology
-# DEPLOYER_PRIVATE_KEY=your_wallet_private_key
-
-python deploy.py
-# Copy the printed CONTRACT_ADDRESS to backend/.env
-```
+### 2. Configure PostgreSQL Database
+AgriTrace uses a PostgreSQL database. Follow these steps to initialize it:
+1. Open **pgAdmin 4** (or your preferred PostgreSQL client).
+2. Create a new database named `agritrace_db`.
+3. Open the **Query Tool** on `agritrace_db`.
+4. Open the [agritrace_database_schema.sql](file:///d:/Agriculture%20project/agritrace_database_schema.sql) file located in the project root.
+5. Copy all the query code, paste it into the **Query Tool** editor, and click **Execute (F5)**.
+6. The entire relational schema (42 tables, PK/FK indexes, constraints, cascades, and default admin credentials) will be created instantly.
 
 ---
 
-## Environment Variables
-
-See `.env.example` for all variables. Key settings in `backend/.env`:
-
-| Variable | Description |
-|----------|-------------|
-| `MONGO_URL` | MongoDB Atlas connection string |
-| `DATABASE_NAME` | Database name (`agritrust_db`) |
-| `JWT_SECRET` | Secret key for JWT tokens |
-| `JWT_ALGORITHM` | JWT algorithm (`HS256`) |
-| `ACCESS_TOKEN_EXPIRE_MINUTES` | Token expiry (60) |
-| `ADMIN_EMAIL` | Admin login email |
-| `ADMIN_PASSWORD` | Admin login password |
-| `WEB3_PROVIDER` | Polygon Amoy RPC URL |
-| `CONTRACT_ADDRESS` | Deployed CropTrace contract address |
-| `DEPLOYER_PRIVATE_KEY` | Wallet private key for storing hashes |
-| `UPLOAD_DIR` | Path to uploads folder (`../uploads`) |
-| `CORS_ORIGINS` | Allowed frontend origins |
+### 3. Backend Setup & Configuration
+1. Navigate to the `backend` directory:
+   ```bash
+   cd backend
+   ```
+2. Create and activate a Python virtual environment:
+   ```bash
+   python -m venv venv
+   
+   # Windows (PowerShell)
+   venv\Scripts\Activate.ps1
+   
+   # macOS / Linux
+   source venv/bin/activate
+   ```
+3. Install the dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Configure environment variables. Rename `.env.example` to `.env` or edit the existing `backend/.env` file:
+   * **Database**: `DATABASE_URL=postgresql+asyncpg://<username>:<password>@localhost:5432/agritrace_db`
+   * **AI API Key**: `OPENROUTER_API_KEY=your_key` (Required for Gemini-based crop checks and RAG assistant)
+   * **Gmail SMTP**: `SMTP_USERNAME=your_email` and `SMTP_PASSWORD=your_app_password` (Required for OTP email recovery and tamper alerts)
+   * **Telegram Bot**: `TELEGRAM_BOT_TOKEN=your_bot_token` (Required to run the verification chatbot bot)
 
 ---
 
-## Run Instructions
+### 4. Frontend Setup
+1. Open a new terminal and navigate to the `frontend` directory:
+   ```bash
+   cd frontend
+   ```
+2. Install npm dependencies:
+   ```bash
+   npm install
+   ```
 
-### Start Backend (Terminal 1)
+---
 
+## 🏃 Run Instructions
+
+### Start the Backend (Terminal 1)
+Make sure the Python virtual environment is active inside `backend`:
 ```bash
-cd backend
-venv\Scripts\activate    # Windows
+# From the backend directory
 python run.py
 ```
+* **REST API Address**: `http://localhost:8000`
+* **Swagger Interactive Docs**: `http://localhost:8000/docs`
 
-API runs at: **http://localhost:8000**  
-API docs: **http://localhost:8000/docs**
-
-### Start Frontend (Terminal 2)
-
+### Start the Frontend (Terminal 2)
 ```bash
-cd frontend
+# From the frontend directory
 npm run dev
 ```
-
-App runs at: **http://localhost:5173**
-
----
-
-## Default Credentials
-
-### Admin
-- **Email:** `admin@agritrace.com`
-- **Password:** `Admin@123`
-
-### Farmer
-Register a new account at `/farmer/register`. Admin must verify the farmer before crop batches can be added.
+* **Frontend Dashboard Portal**: `http://localhost:5173`
 
 ---
 
-## User Workflows
+## 🔒 Default Logins & Access
 
-### Farmer
-1. Register at `/farmer/register`
-2. Wait for admin verification
-3. Login and add crop batch with image
-4. System generates hash, stores on blockchain, creates QR code
-5. View and download QR from "My Crops"
+### System Administrator
+* **Email**: `admin@agritrace.com`
+* **Password**: `Admin@123`
+* **Workflow**: Login to verify pending farmers, review fraud score monitor sections, examine blockchain tampering logs, and check Leaflet maps for exact surveyor boundaries.
 
-### Admin
-1. Login at `/admin/login`
-2. Verify pending farmers
-3. Monitor all crop batches
-4. Review verification scan logs
-
-### Consumer
-1. Visit `/scan` or scan physical QR code
-2. View verification result: **AUTHENTIC** or **TAMPERED**
-3. See full crop and farmer details
+### Farmer & Buyer
+* Use the corresponding **Register** screens to create test accounts:
+  * Farmers require location coordinates (Latitude, Longitude) for boundary maps.
+  * Security questions must be configured during registration to enable the password recovery portal fallback mechanism.
 
 ---
 
-## API Documentation
+## 🤖 Advanced AI Features & Integrations
 
-Full API reference: [docs/API.md](docs/API.md)
+### 1. Leaflet Interactive Maps
+* **Farmers & Admins**: View exact coordinate coordinates and surveyor land boundaries polygon.
+* **Buyers**: Restricted coordinates (privacy fuzzing). Shows a fuzzed village/district overlay circle.
+* Hover the layer icon in the map corner to switch dynamically between **🛰️ Satellite View**, **🗺️ Street View**, and **🌙 Dark View**!
 
-Interactive docs available at `http://localhost:8000/docs` when backend is running.
+### 2. Multi-Factor Password Recovery
+* Try standard email passcode verification or trigger the **"Try another way"** route to answer your registered security question to reset passwords securely.
 
-### Key Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/register` | Farmer registration |
-| POST | `/api/auth/login` | Farmer login |
-| POST | `/api/auth/admin/login` | Admin login |
-| POST | `/api/farmer/crops` | Add crop batch |
-| GET | `/api/farmer/crops` | List farmer crops |
-| GET | `/api/admin/farmers` | List all farmers |
-| PATCH | `/api/admin/verify/{id}` | Verify farmer |
-| GET | `/api/admin/crops` | List all batches |
-| GET | `/api/verify/{batch_id}` | Verify authenticity |
-| GET | `/api/qr/{batch_id}` | Get QR code PNG |
+### 3. Telegram Verification Bot
+1. Linked accounts can verify crop authenticity directly via Telegram!
+2. Send `verify <Batch_ID>` (e.g. `verify AGR-7128AEECBFD4`) to receive a cryptographic ledger verification report.
+3. Send a photo of a crop QR card — the bot uses OpenCV to decode the QR payload, checks it against the database ledger, and returns the verification report instantly!
+4. Send an organic leaf photo to scan and receive AI crop diagnostics, severity checks, and treatment guides.
 
 ---
 
-## Hashing Logic
-
-SHA-256 hash computed from:
-
+## 🧪 Verification & Testing
+To ensure the system works as expected on the target laptop, run the pytest integration test suite:
+```bash
+# From the project root
+$env:PYTHONPATH="backend"; pytest tests/e2e/test_auth.py
 ```
-crop_name | harvest_date | farming_method | image_file_hash
-```
-
-The resulting `data_hash` is stored in MongoDB and on the Polygon blockchain.
-
----
-
-## MongoDB Collections
-
-- **farmers** — Farmer accounts with verification status
-- **crop_batches** — Crop data, hashes, blockchain TX, image URLs
-- **qr_logs** — Verification scan logs with status and IP
-
----
-
-## License
-
-Academic project — AGRITRACE © 2025
+This tests registration, OTP generations, forgot password recovery flows, and Leaflet bounds checks.

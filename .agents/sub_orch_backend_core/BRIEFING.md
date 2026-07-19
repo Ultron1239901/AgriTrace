@@ -56,18 +56,24 @@ Coordinate and implement all backend core enhancements for AgriTrace.
 | Explorer 1 | teamwork_preview_explorer | Explore codebase for M2 | in-progress | 7455fecc-379a-4b87-80f7-c6a8760082c5 |
 | Explorer 2 | teamwork_preview_explorer | Explore codebase for M2 | completed | 421702c7-a328-4907-9457-106312461da1 |
 | Explorer 3 | teamwork_preview_explorer | Explore codebase for M2 | in-progress | f542eb06-32e4-43eb-af0a-6f37c1568d8c |
-| Worker 1 | teamwork_preview_worker | Implement M2 enhancements | in-progress | 831ca220-72c7-4b60-949e-8c59941e138c |
+| Worker 1 | teamwork_preview_worker | Implement M2 enhancements | failed (crashed) | 831ca220-72c7-4b60-949e-8c59941e138c |
+| Worker 2 | teamwork_preview_worker | Implement quality fixes | in-progress | 0bfd91a0-1120-4db5-a267-67596f546097 |
+| Reviewer 1 | teamwork_preview_reviewer | Review M2 changes | failed (stalled) | f94b9783-7b8e-4cfa-9445-3fbcef9509fd |
+| Reviewer 2 | teamwork_preview_reviewer | Review M2 changes | completed | fac74d2e-7598-4925-b01e-c92893981ae2 |
+| Reviewer 3 | teamwork_preview_reviewer | Review M2 changes | failed (crashed) | 48faca22-00a1-415e-a50e-13de91bf1155 |
+| Auditor 1 | teamwork_preview_auditor | Forensic Audit M2 | failed (stalled) | d94ec290-1753-4bae-b6b2-5e619a73fb80 |
+| Auditor 2 | teamwork_preview_auditor | Forensic Audit M2 | failed (crashed) | f376a4b7-7262-49dc-a05a-51313b6fad9b |
 
 ## Succession Status
 - Succession required: no
-- Spawn count: 4 / 16
-- Pending subagents: 7455fecc-379a-4b87-80f7-c6a8760082c5, f542eb06-32e4-43eb-af0a-6f37c1568d8c, 831ca220-72c7-4b60-949e-8c59941e138c
+- Spawn count: 10 / 16
+- Pending subagents: 0bfd91a0-1120-4db5-a267-67596f546097
 - Predecessor: none
 - Successor: not yet spawned
 
 ## Active Timers
 - Heartbeat cron: task-68
-- Safety timer: task-182
+- Safety timer: task-499
 - On succession: kill all timers before spawning successor
 - On context truncation: run `manage_task(Action="list")` — re-create if missing
 

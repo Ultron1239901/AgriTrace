@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 import pytest_asyncio
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
-from sqlalchemy import select, delete
+from sqlalchemy import select, delete, text
 
 # Add backend directory to Python path
 backend_path = Path(__file__).resolve().parents[2] / "backend"
@@ -25,7 +25,7 @@ def event_loop():
     yield loop
     loop.close()
 
-@pytest_asyncio.fixture(scope="session")
+@pytest_asyncio.fixture
 async def db_engine():
     """Create database engine using credentials from backend settings."""
     settings = get_settings()
@@ -34,6 +34,26 @@ async def db_engine():
     if "asyncpg" not in db_url:
         db_url = db_url.replace("postgresql://", "postgresql+asyncpg://")
     engine = create_async_engine(db_url, echo=False)
+    
+    # Run automatic test database migrations to ensure all columns from latest models exist
+    async with engine.begin() as conn:
+        # Add new columns to farmers
+        await conn.execute(text("ALTER TABLE farmers ADD COLUMN IF NOT EXISTS soil_type VARCHAR;"))
+        await conn.execute(text("ALTER TABLE farmers ADD COLUMN IF NOT EXISTS land_document VARCHAR;"))
+        await conn.execute(text("ALTER TABLE farmers ADD COLUMN IF NOT EXISTS exact_location VARCHAR;"))
+        await conn.execute(text("ALTER TABLE farmers ADD COLUMN IF NOT EXISTS water_availability VARCHAR;"))
+        await conn.execute(text("ALTER TABLE farmers ADD COLUMN IF NOT EXISTS previous_crops VARCHAR;"))
+        await conn.execute(text("ALTER TABLE farmers ADD COLUMN IF NOT EXISTS loan_amount DOUBLE PRECISION;"))
+        await conn.execute(text("ALTER TABLE farmers ADD COLUMN IF NOT EXISTS security_question VARCHAR;"))
+        await conn.execute(text("ALTER TABLE farmers ADD COLUMN IF NOT EXISTS security_question_answer VARCHAR;"))
+        
+        # Add new columns to buyers
+        await conn.execute(text("ALTER TABLE buyers ADD COLUMN IF NOT EXISTS security_question VARCHAR;"))
+        await conn.execute(text("ALTER TABLE buyers ADD COLUMN IF NOT EXISTS security_question_answer VARCHAR;"))
+        
+        # Make sure all tables defined in Base.metadata exist
+        await conn.run_sync(Base.metadata.create_all)
+        
     yield engine
     await engine.dispose()
 
@@ -50,12 +70,12 @@ async def db_session(db_engine):
 
 # Helper function to clean up E2E test data
 async def clean_e2e_test_data(session: AsyncSession):
-    """Deletes all test entries from the database that match %@e2e.test."""
+    """Deletes all test entries from the database that match %@e2etest.com."""
     # 1. Fetch IDs of e2e farmers and buyers
-    farmers_res = await session.execute(select(Farmer.id).where(Farmer.email.like("%@e2e.test")))
+    farmers_res = await session.execute(select(Farmer.id).where(Farmer.email.like("%@e2etest.com")))
     farmer_ids = farmers_res.scalars().all()
     
-    buyers_res = await session.execute(select(Buyer.id).where(Buyer.email.like("%@e2e.test")))
+    buyers_res = await session.execute(select(Buyer.id).where(Buyer.email.like("%@e2etest.com")))
     buyer_ids = buyers_res.scalars().all()
     
     # 2. Delete dependent tables to avoid foreign key violations
@@ -69,12 +89,12 @@ async def clean_e2e_test_data(session: AsyncSession):
         await session.execute(delete(PurchaseRequest).where(PurchaseRequest.buyer_id.in_(buyer_ids)))
         await session.execute(delete(VerificationLog).where(VerificationLog.verified_by_buyer_id.in_(buyer_ids)))
         
-    # 3. Clean up verification OTP records for %@e2e.test
-    await session.execute(delete(OTPStore).where(OTPStore.email.like("%@e2e.test")))
+    # 3. Clean up verification OTP records for %@e2etest.com
+    await session.execute(delete(OTPStore).where(OTPStore.email.like("%@e2etest.com")))
     
     # 4. Delete the core Farmer and Buyer records
-    await session.execute(delete(Farmer).where(Farmer.email.like("%@e2e.test")))
-    await session.execute(delete(Buyer).where(Buyer.email.like("%@e2e.test")))
+    await session.execute(delete(Farmer).where(Farmer.email.like("%@e2etest.com")))
+    await session.execute(delete(Buyer).where(Buyer.email.like("%@e2etest.com")))
     
     await session.commit()
 
@@ -120,10 +140,19 @@ async def seed_verified_farmer(session: AsyncSession, email: str, name: str = "E
     return farmer
 
 @pytest_asyncio.fixture
-async def api_client():
+async def api_client(db_session):
     """Fixture that provides an asynchronous HTTP client for testing API endpoints."""
     import httpx
-    # Base URL can be configured via environment or default to local FastAPI dev server
-    base_url = os.getenv("API_BASE_URL", "http://localhost:8000")
-    async with httpx.AsyncClient(base_url=base_url, timeout=10.0) as client:
+    from app.main import app
+    
+    # Override get_db dependency to use the test db_session
+    from app.database import get_db
+    async def override_get_db():
+        yield db_session
+        
+    app.dependency_overrides[get_db] = override_get_db
+    
+    async with httpx.AsyncClient(app=app, base_url="http://test", timeout=10.0) as client:
         yield client
+        
+    app.dependency_overrides.clear()

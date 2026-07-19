@@ -26,15 +26,15 @@ Design and build a comprehensive, opaque-box E2E test suite derived from the req
    - Escalate: report to parent (sub-orchestrators only, last resort)
 4. **Succession**: Self-succeed at 16 spawns. Write handoff.md, spawn successor.
 - **Work items**:
-  1. E2E Test Infrastructure Design [in-progress]
-  2. Tier 1 Test Case Implementation [pending]
+  1. E2E Test Infrastructure Design [completed]
+  2. Tier 1 Test Case Implementation [in-progress]
   3. Tier 2 Test Case Implementation [pending]
   4. Tier 3 Test Case Implementation [pending]
   5. Tier 4 Test Case Implementation [pending]
   6. E2E Test Suite Validation [pending]
   7. Publish TEST_READY.md [pending]
-- **Current phase**: 1
-- **Current focus**: E2E Test Infrastructure Design
+- **Current phase**: 2
+- **Current focus**: Tier 1 Test Case Implementation
 
 ## 🔒 Key Constraints
 - Opaque-box testing (driven by requirements, not implementation internals).
@@ -54,12 +54,16 @@ Design and build a comprehensive, opaque-box E2E test suite derived from the req
 |-------|------|-----------|--------|---------|
 | explorer_test_infra_1 | teamwork_preview_explorer | Investigate workspace and design test infra | failed | 353412be-dc19-4ae3-a375-06555b623beb |
 | explorer_test_infra_1_gen2 | teamwork_preview_explorer | Investigate workspace and design test infra | completed | d7c18e22-84d6-43f6-9027-b4f5cbb18740 |
-| worker_test_infra_1 | teamwork_preview_worker | Implement E2E test infra files and TEST_INFRA.md | in-progress | 05831f76-d07f-4a0c-b20c-ca6ebecc62cf |
+| worker_test_infra_1 | teamwork_preview_worker | Implement E2E test infra files and TEST_INFRA.md | failed | 05831f76-d07f-4a0c-b20c-ca6ebecc62cf |
+| worker_test_infra_1_gen2 | teamwork_preview_worker | Implement E2E test infra files and TEST_INFRA.md | failed | c4533c3d-1b60-4171-a819-c3315ab53520 |
+| worker_test_infra_1_gen3 | teamwork_preview_worker | Implement E2E test infra files and TEST_INFRA.md | completed | 194e449b-e68b-46b1-a2d8-350206c7bcd5 |
+| worker_verification_1_gen2 | teamwork_preview_worker | Verify E2E tests collection and compilation | completed | 8854634f-a4db-4750-a13f-1a1c35b0d1c4 |
+| explorer_tier1_1 | teamwork_preview_explorer | Investigate and design Tier 1 E2E tests | in-progress | 82670830-06ce-4150-8c80-ed3fd39c512f |
 
 ## Succession Status
 - Succession required: no
-- Spawn count: 3 / 16
-- Pending subagents: 05831f76-d07f-4a0c-b20c-ca6ebecc62cf
+- Spawn count: 7 / 16
+- Pending subagents: 82670830-06ce-4150-8c80-ed3fd39c512f
 - Predecessor: none
 - Successor: not yet spawned
 

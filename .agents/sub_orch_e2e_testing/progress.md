@@ -1,8 +1,8 @@
 ## Current Status
-Last visited: 2026-07-18T09:34:00Z
+Last visited: 2026-07-18T19:02:50Z
 
-- [/] Milestone 1: Test Infra Setup (Design test infra, write TEST_INFRA.md)
-- [ ] Milestone 2: Tier 1 Features (Feature coverage tests, >=5 per feature)
+- [x] Milestone 1: Test Infra Setup (Design test infra, write TEST_INFRA.md)
+- [/] Milestone 2: Tier 1 Features (Feature coverage tests, >=5 per feature)
 - [ ] Milestone 3: Tier 2 Boundaries (Boundary and corner tests, >=5 per feature)
 - [ ] Milestone 4: Tier 3 Combinations (Cross-feature combinations, pairwise)
 - [ ] Milestone 5: Tier 4 Real-World (Real-world scenarios, >=5 workloads)
@@ -11,6 +11,9 @@ Last visited: 2026-07-18T09:34:00Z
 
 ## Iteration Status
 Current iteration: 1 / 32
-Spawn count: 3 / 16
+Spawn count: 7 / 16
 
 HANG: explorer_test_infra_1 unresponsive after 22 min, replaced.
+ERROR: worker_test_infra_1 quota error, replaced.
+ERROR: worker_test_infra_1_gen2 network error, replaced.
+ERROR: worker_verification_1 network error, replaced.

@@ -1,0 +1,33 @@
+Potato, Chilli, Maize, and Banana Crop Manual
+============================================
+
+Detailed cultivation guidelines, nutrient requirements, and disease remedies for key supported crops in the AgriTrace ecosystem.
+
+1. POTATO (Solanum tuberosum)
+----------------------------
+- Soil: Loose, well-aerated sandy loam soils with rich organic matter and pH between 5.2 and 6.4.
+- Sowing: Rabi season (October-November) using certified seed tubers. Furrow irrigation is recommended.
+- Nutrient (NPK): 120:100:120 kg/ha. Apply potash in full dose at sowing to optimize tuber size and starch content.
+- Disease (Late Blight): Causes brown water-soaked leaf spots and stem rot.
+  * Remedy: Apply systemic fungicides containing Metalaxyl or copper oxychloride (3 g/L). Avoid overhead irrigation.
+
+2. CHILLI (Capsicum annuum)
+---------------------------
+- Climate: Warm, humid growing season with dry weather during ripening. Ideal temperature: 20-30°C.
+- Nutrient (NPK): 150:60:60 kg/ha. Requires micronutrients (Zinc, Boron) to prevent flower drop.
+- Disease (Leaf Curl Virus): Leaves curl upwards and wrinkle. Transmitted by thrips and whiteflies.
+  * Remedy: Apply organic sprays like 5% Neem Seed Kernel Extract (NSKE) or release ladybird beetles to control insect vectors.
+
+3. MAIZE (Zea mays)
+-------------------
+- Soil: Fertile alluvial soil or red loamy soil with excellent drainage.
+- Sowing: Sown in Kharif (June-July) or Rabi (October-November).
+- Threat (Fall Armyworm - FAW): Voracious caterpillar pest chewing whorls.
+  * Remedy: Intercrop with cowpea, install pheromone traps, or spray Bacillus thuringiensis (Bt) or Spinosad under critical thresholds.
+
+4. BANANA (Musa)
+----------------
+- Climate: Warm tropical climate with high rainfall. Maintain uniform soil moisture using drip systems.
+- Nutrient (NPK): Heavy feeder requiring 110:35:330 g of NPK per plant. High potassium is critical for finger filling.
+- Disease (Panama Wilt): Soil-borne fungal pathogen causing leaf yellowing and stem splitting.
+  * Remedy: Use disease-free tissue-cultured suckers, practice soil solarization, and rotate with paddy or green manures.

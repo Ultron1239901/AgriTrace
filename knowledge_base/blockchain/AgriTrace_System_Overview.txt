@@ -1,0 +1,34 @@
+AgriTrace Platform Technical & Operations Overview
+===================================================
+
+AgriTrace is a decentralized supply-chain trace ledger and counterfeit-prevention platform for agricultural produce.
+
+1. FIRST-TIME ONBOARDING & TERMS INTERCEPTOR
+-------------------------------------------
+- When a user (Farmer or Buyer) logs in for the first time, they are intercepted by a modern Guideline Manual popup screen.
+- Access to the dashboard remains locked until the user reads the guidelines, checks the Terms & Conditions checkbox, and clicks "OK".
+- The user is then guided through an interactive onboarding tour explaining the sidebar layout, dashboard statistics, and support chat.
+
+2. PROFILE REGISTRATION & AUTHENTICATION RECOVERY
+-------------------------------------------------
+- Registration requires a name, email, verified phone number, physical address, and security question challenge answers (chosen from 3 predefined recovery questions).
+- In case of password loss, users can recover using a dual-path recovery portal:
+  * Primary: Email OTP verification code challenge.
+  * Secondary: Correct case-insensitive answer to the security question they configured.
+
+3. GEOSPATIAL BOUNDARIES & MAPS
+-------------------------------
+- Profile coordinates (Latitude, Longitude) are validated on registration. If values are out of bounds or formatted incorrectly, the server returns "wrong location".
+- Dashboard maps display boundaries:
+  * Farmer / Admin View: Displays exact boundary coordinates for spatial audit.
+  * Buyer View: Restricted to fuzzed/approximate crop coordinates (district/village level) to protect farmer privacy.
+
+4. AUTOMATIC FRAUD & ACCOUNT SUSPENSION SYSTEM
+---------------------------------------------
+- If a crop listing fails computer vision verification during scan checks, the system registers a "NOT_AUTHENTICATED" scan log.
+- Every unauthenticated scan creates or updates a Fraud Analysis record, placing the farmer in the admin's Fraud Monitor dashboard with a high risk score.
+- Attempt Threshold: If a crop batch accumulates 5 or more unauthenticated/counterfeit scans, the AI system triggers automatic farmer suspension.
+- Suspension Rules:
+  * Suspended farmers are banned from the marketplace, listing crops, or viewing buyers.
+  * Suspended farmers remain able to log in, but all dashboard options are disabled, routing them exclusively to the Support Chat menu.
+  * The administrator can review the case, audit the farmer's compliance explanation, and manually unsuspend/approve their profile to restore full access.

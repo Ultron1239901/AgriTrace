@@ -1,0 +1,22 @@
+Market Dynamics, APMC Mandi Rates, and Supply Chain Guidelines
+==============================================================
+
+AgriTrace connects farmers directly to national commodity channels and tracks logistics compliance.
+
+1. APMC MANDI RATES & eNAM ARBITRAGE
+------------------------------------
+- Commodities are traded across APMC (Agricultural Produce Market Committee) mandis. eNAM (electronic National Agriculture Market) integrates these mandis into a single electronic screen.
+- Price Arbitrage: Farmers utilize market analysis metrics to compare peak rates and average rates per quintal across states, routing produce to districts with highest demand.
+- Price Trends: Market price trends are categorized as UPWARD, DOWNWARD, or STABLE based on rolling seasonal arrivals and supply volume metrics.
+
+2. STORAGE TEMPERATURE & HUMIDITY STANDARDS
+-------------------------------------------
+- Grains (Rice/Wheat): Must be dried to under 14% moisture content to prevent mold, insect infestation, and spoilage. Ideal storage: relative humidity 60-65% at 20-25°C.
+- Potatoes: Store in cold storage at 4-7°C with high relative humidity (90%) to prevent weight loss, rot, and sprouting.
+- Banana & Perishables: Store in well-ventilated ripening chambers with controlled ethylene gas and temperature levels (13-15°C).
+
+3. TRANSPORTATION & COLD CHAIN COMPLIANCE
+-----------------------------------------
+- Perishables (Tomato, Banana) require continuous refrigerated transport (Reefer Logistics) to prevent heat stress and shelf-life reduction.
+- First-In, First-Out (FIFO) batch movements ensure stock turnover matching harvest dates.
+- Data handoffs are cryptographically signed and tracked on-chain via batch QR codes.
